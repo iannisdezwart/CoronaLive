@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CoronaLive | Compare Countries</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/plotly.js" charset="utf-8"></script>
+    <script src="js/index.js" charset="utf-8"></script>
+    <script defer src="js/compare-countries.js" charset="utf-8"></script>
+  </head>
+  <body>
+
+    <div class="navbar">
+      <ul>
+        <li>
+          <a href="/" class="bold">CoronaLive</a>
+        </li>
+        <li>
+          <a href="/Countries.html" class="">Per-Country Stats</a>
+        </li>
+        <li>
+          <a href="/CompareCountries.html" class="">Compare Countries</a>
+        </li>
+      </ul>
+      <ul class="right">
+        <li>
+          <!-- <img class="share" onclick="share()" src="/img/share.webp" alt=""> -->
+        </li>
+      </ul>
+    </div>
+
+    <div class="page">
+      <div class="box page-intro">
+        <h1>Country Comparison</h1>
+      </div>
+
+      <div class="box graphs">
+        <div class="graph" id="cases-graph">
+          <button type="button" class="toggle-log" onclick="toggleLog(this)">Toggle Log</button>
+        </div>
+        <div class="graph" id="new-vs-existing-graph">
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>

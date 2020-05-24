@@ -1,0 +1,13 @@
+{
+  "name": "CoronaLive",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "Iannis de Zwart",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/plotly.js": "^1.44.33"
+  }
+}

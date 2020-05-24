@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CoronaLive | Per-Country Stats</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/plotly.js" charset="utf-8"></script>
+    <script src="js/index.js" charset="utf-8"></script>
+    <script defer src="js/countries.js" charset="utf-8"></script>
+  </head>
+  <body>
+
+    <div class="navbar">
+      <ul>
+        <li>
+          <a href="/" class="bold">CoronaLive</a>
+        </li>
+        <li>
+          <a href="/Countries.html" class="">Per-Country Stats</a>
+        </li>
+        <li>
+          <a href="/CompareCountries.html" class="">Compare Countries</a>
+        </li>
+      </ul>
+      <ul class="right">
+        <li>
+          <!-- <img class="share" onclick="share()" src="/img/share.webp" alt=""> -->
+        </li>
+      </ul>
+    </div>
+
+    <div class="page">
+      <div class="box page-intro">
+        <h1>Country Data</h1>
+        <br>
+        <div class="search">
+          <input type="text" placeholder="Search...">
+          <div class="arrow"></div>
+          <ul class="dropdown"></ul>
+        </div>
+        <br>
+        <div class="stats">
+          <p class="subtitle">Cumulative Infections: <span class="country-stats infected"></span></p>
+          <p class="subtitle">Deaths So Far: <span class="country-stats deaths"></span></p>
+          <p class="subtitle">Recoveries So Far: <span class="country-stats recovered"></span></p>
+        </div>
+      </div>
+
+      <div class="box graphs">
+        <div class="graph" id="cases-graph">
+          <button type="button" class="toggle-cases-graph" onclick="toggleCasesGraph()">Show Active</button>
+          <button type="button" class="toggle-log" onclick="toggleLog(this)">Toggle Log</button>
+          <div class="info">
+            <div class="text">
+              This graph plots the cumulative cases, which means that it also includes closed cases (which either resulted in recovery, or death). Click the button below to only show active cases.
+            </div>
+          </div>
+        </div>
+        <div class="graph" id="new-cases-graph">
+          <button type="button" class="toggle-log" onclick="toggleLog(this)">Toggle Log</button>
+        </div>
+        <div class="graph" id="deaths-graph">
+          <button type="button" class="toggle-log" onclick="toggleLog(this)">Toggle Log</button>
+        </div>
+        <div class="graph" id="new-deaths-graph">
+          <button type="button" class="toggle-log" onclick="toggleLog(this)">Toggle Log</button>
+        </div>
+        <div class="graph" id="recoveries-graph">
+          <button type="button" class="toggle-log" onclick="toggleLog(this)">Toggle Log</button>
+        </div>
+        <div class="graph" id="new-recoveries-graph">
+          <button type="button" class="toggle-log" onclick="toggleLog(this)">Toggle Log</button>
+        </div>
+        <div class="graph" id="death-rate-graph">
+          <button type="button" class="toggle-log" onclick="toggleLog(this)">Toggle Log</button>
+          <div class="info">
+            <div class="text">
+              This graph plots the calculated death rate each day.
+              <br><br>
+              The death rate is calculated as follows:
+              <br><br>
+              <span class="math">
+                Death rate = #deaths<sub>day n</sub> / #active-cases<sub>day n</sub>
+              </span>
+              <br><br>
+              Be aware that this calculation might not be very realistic, since the reported number of cases could be much lower than the actual cases.
+            </div>
+          </div>
+        </div>
+        <div class="graph" id="new-vs-existing-graph">
+          <div class="info">
+            <div class="text">
+              This graph plots the cumulative cases and the new cases since last week each day, on the x and y axis respectively. Be aware that the x axis does not indicate time and both axes are shown on logarithmic scale.
+              <br><br>
+              On the x axis: <span class="math">#cases<sub>day n</sub></span>
+              <br>
+              On the y axis: <span class="math">#new cases since last week</span>
+              <br><br>
+              This graph usually looks like a straight line, indicating that the number of cases is growing exponentially. When this straight line plummets down after a while, it means that the spread is slowing down.
+            </div>
+          </div>
+        </div>
+        <div class="graph" id="growth-factor-graph">
+          <button type="button" class="toggle-log" onclick="toggleLog(this)">Toggle Log</button>
+          <div class="info">
+            <div class="text">
+              This graph plots the growth factor each day.
+              <br><br>
+              A growth factor bigger than 1 implies that the number of active cases is growing, while a growth factor less than 1 implies the opposite.
+              <br><br>
+              The growth factor is determined by the following formula:
+              <br><br>
+              <span class="math">
+                Growth Factor = #active-cases<sub>day n</sub> / #active-cases<sub>day n - 1</sub>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>

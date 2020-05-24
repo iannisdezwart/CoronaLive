@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CoronaLive | Home</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/plotly.js" charset="utf-8"></script>
+    <script src="js/index.js" charset="utf-8"></script>
+    <script defer src="js/homepage.js" charset="utf-8"></script>
+  </head>
+  <body>
+
+    <div class="navbar">
+      <ul>
+        <li>
+          <a href="/" class="bold">CoronaLive</a>
+        </li>
+        <li>
+          <a href="/Countries.html" class="">Per-Country Stats</a>
+        </li>
+        <li>
+          <a href="/CompareCountries.html" class="">Compare Countries</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="page">
+      <div class="box page-intro">
+        <h1>Worldwide Data</h1>
+        <br>
+        <div class="stats">
+          <p class="subtitle">Cumulative Infections: <span class="country-stats infected">0</span></p>
+          <p class="subtitle">Deaths So Far: <span class="country-stats deaths">0</span></p>
+          <p class="subtitle">Recoveries So Far: <span class="country-stats recovered">0</span></p>
+        </div>
+      </div>
+
+      <div class="box graphs">
+        <div class="graph" id="cases-graph"></div>
+        <div class="graph" id="new-cases-graph"></div>
+        <div class="graph" id="deaths-graph"></div>
+        <div class="graph" id="new-deaths-graph"></div>
+        <div class="graph" id="recoveries-graph"></div>
+        <div class="graph" id="new-recoveries-graph"></div>
+      </div>
+    </div>
+
+  </body>
+</html>
